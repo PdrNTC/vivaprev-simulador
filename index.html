@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importações do projeto -->
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Simulador - Viva Futuro</title>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1 class="titulo__principal">Simulador de Renda</h1>
+        <img class="imagem__logo" src="./imagens/viva_futuro.png" alt="logo do plano viva futuro">
+    </header>
+
+    <div class="boas__vindas">
+        <p class="bv__texto">Olá!</p>
+        <p class="bv__paragrafo">Seja bem vindo ao simulador de renda do plano Viva Futuro. Para simular a sua renda, basta inserir o seu nome e o valor do seu aporte inicial.</p>
+    </div>
+
+    
+    <div class="container__formulario">
+        <div class="dados__participante">
+            <label class="campo__etiqueta" for="nome">Nome Completo</label>
+            <input name="nome" id="nome" class="campo__escrita" required placeholder="Digite seu nome completo" />
+        </div>
+        <div class="dados__saldo">
+            <label class="campo__etiqueta" for="valor">Valor do aporte</label>
+            <input class="campo__escrita" id="valor" type="number" name="saldo" placeholder="inserir número inteiro sem ponto ou virgula: ex (500000)">
+        </div> 
+        <br> <br> <!-- Quebra de linhas -->
+        <br> <br> <!-- Quebra de linhas -->
+    </div>
+
+    <button class="formulario__botao" onclick="calcular()">Calcular</button>
+   
+
+    <!-- Secao sobre os calculos por porcentagem % -->
+    <div class="participante__apresentacao">
+        <p class="nome__participante" id="nome__cliente"> Nome Completo </p>
+        <p class="texto__participante">A VIVA PREVIDÊNCIA apresenta a seguir os resultados de simulações de benefícios previdenciários, com pagamentos de rendas mensais, caso sua opção seja pela adesão ao VIVA FUTURO. Os cálculos e resultados consideram como referência as informações pessoais inseridas acima.</p>
+    </div>
+
+    <div class="plano__calculos">
+        <h2 class="plano__titulo">Renda por percentual saldo de conta</h2>
+        <div class="fatores__calculo">
+            <p class="calculo__texto"> <strong class="negrito">Fatores de cálculo <br></strong>
+                Taxa de juros anual real: <strong class="negrito">3.40%<br></strong>
+                Taxa de juros real mensal: <strong class="negrito">0.2790%</strong>
+            </p>
+        </div>
+        <div class="fatores__saldo">
+            <p class="calculo__texto">
+                Saldo ao aderir: <strong class="negrito">SALDO<br></strong>
+                Abono anual: <strong class="negrito">NÃO</strong>
+            </p>
+        </div>
+    </div>
+
+    <div class="container__percentual" id="container__percentual">
+        <h3 class="percentual__titulo">Valor bruto mensal inicial</h3>
+        <div class="container__tabela" id="container__tabela">
+            <table class="tabela" id="tabela">
+                 <!--
+                    Elementos inseridors dinamicamente pelo JS;
+                 -->
+            </table>
+        </div>
+    </div>
+
+    <!--   ************************************************************  -->
+
+
+
+    <!-- Secao sobre os calculos por prazo determinado -->
+    <div class="plano__calculos">
+        <h2 class="plano__titulo">Renda por prazo determinado</h2>
+        <div class="fatores__calculo">
+            <p class="calculo__texto"> <strong class="negrito">Fatores de cálculo <br></strong>
+                Taxa de juros anual real: <strong class="negrito">3.40%<br></strong>
+                Taxa de juros real mensal: <strong class="negrito">0.2790%</strong>
+            </p>
+        </div>
+        <div class="fatores__saldo">
+            <p class="calculo__texto">
+                Saldo ao aderir: <strong class="negrito">SALDO<br></strong>
+                Abono anual: <strong class="negrito">NÃO</strong>
+            </p>
+        </div>
+    </div>
+
+    <div class="container__percentual" id="container__prazo">
+        <h3 class="percentual__titulo">Valor bruto mensal inicial</h3>
+        <div class="container__tabela" id="container__tabela">
+            <table class="tabela" id="tabela_prazo">
+                 <!--
+                    Elementos inseridors dinamicamente pelo JS;
+                 -->
+            </table>
+        </div>
+    </div>
+
+    <!--   ************************************************************  -->
+
+
+    <div class="container__observacoes">
+        <p class="observacoes__titulo">Observações importantes</p>
+        <p class="observacoes__texto">
+            O resultado dessa simulação é uma projeção que não se constitui, de modo algum, em garantia, proposta ou obrigação por parte da Entidade. O valor efetivo do benefício será calculado no momento da solicitação do recebimento e dependerá do saldo acumulado constituído, da rentabilidade real dada pela performance das aplicações e dos critérios regulamentares do Plano VIVA FUTURO. A renda será devidamente tributada, no momento do recebimento, conforme a tabela de Imposto de Renda escolhida.<br><br>
+            Para mais detalhes consulte o Regulamento do Plano de Benefícios.  Para adesão, envie seu email para <strong class="negrito">negocios@vivaprev.com.br.</strong><br><br>
+            O time da VIVA está ansioso para recebê-lo e permanece à disposição para quaisquer esclarecimentos.
+        </p>
+    </div>
+    
+
+    <footer class="rodape">
+        <img class="imagem__rodape" src="./imagens/viva_futuro_footer.png" alt="logotipo da vivaprevidencia">
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

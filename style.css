@@ -1,0 +1,545 @@
+:root {
+    --fonte-principal: 'Montserrat', sans-serif;
+    --branco: #FFFFFF;
+    --verde: #03C988;
+    --verde-botao: #93DA2B;
+    --roxo: #82AAE3;
+    --azul-escuro: #13005A;
+    --preto: #000000;
+    --cor-de-fundo: #F5F5F5;
+    --cinza: #3D3D3B;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    background: linear-gradient(180deg,rgba(230,230,230,0) 79.38%,#93DA2B 100%);
+    color: var(--cinza);
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em;
+}
+
+.titulo__principal {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--cinza);
+    margin-left: 6em;
+}
+
+.imagem__logo {
+    margin-right: 25em;
+}
+
+.boas__vindas {
+    color: var(--cinza);
+    margin-left: 19.5em;
+}
+
+.bv__texto {
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 0.4em;
+}
+
+.bv__paragrafo {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    width: 30%;
+}
+
+.container__formulario {
+    display: flex;
+    margin: 3em 19.5em;
+}
+
+.dados__participante {
+    width: auto;
+}
+
+.dados__saldo {
+    width: auto;
+}
+
+.campo__etiqueta {
+    font-weight: 700;
+    width: 50%;
+    color: var(--cinza);
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.campo__escrita {
+    background: #D9D9D9;
+    border-radius: 30px;
+    border: none;
+    padding: 1em;
+    width: 90%;
+}
+
+
+.formulario__botao {
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--cinza);
+    padding: 0.4em 5em;
+    border: 1px solid var(--azul-escuro);
+    background-color: var(--verde-botao);
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin-left: 9.8em;
+    margin-top: 0.5em;
+}
+
+.formulario__botao:hover {
+    background-color: var(--roxo);
+}
+
+.titulo__percentual {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.participante__apresentacao {
+    margin-top: 4em;
+}
+
+.nome__participante {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43.88px;
+    color: var(--cinza);
+    margin-left: 9em;
+}
+
+.texto__participante {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--cinza);
+    line-height: 24.38px;
+    width: 50%;
+    margin-left: 16.2em;
+    margin-top: 1em;
+}
+
+.plano__titulo {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.negrito {
+    font-weight: 700;
+}
+
+.plano__calculos {
+    margin-top: 3em;
+    margin-left: 19.8em;
+    display: flex;
+    flex-direction: column;
+}
+
+.fatores__calculo {
+    width: 50%;
+    line-height: 24px;
+}
+
+.fatores__saldo {
+    width: 50%;
+    margin-left: 22em;
+    margin-top: -3em;
+    line-height: 20px;
+}
+
+.container__percentual {
+    margin-top: 2em;
+}
+
+.percentual__titulo {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center; 
+}
+
+.container__tabela {
+    display: flex;
+    justify-content: center;
+}
+
+table, th, td {
+    border:1px solid var(--cinza);
+    padding: 0.5em;
+    margin-top: 1em;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+th {
+    background-color: #B9B9B9;    
+}
+
+.container__observacoes{
+    margin-top: 2em;
+    margin-left: 20em;
+}
+
+.observacoes__titulo{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 1em;
+    margin-top: 2em;
+}
+
+.observacoes__texto{
+    font-size: 20px;
+    line-height: 24.38px;
+    font-weight: 500;
+    width: 60%;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    margin-top: 10em;
+}
+
+
+/* Layout Tablet */
+
+@media screen and (max-width: 1024px) {
+
+    /* Cabecalho */
+
+    .cabecalho {
+        margin: 1em;
+    }
+
+    .titulo__principal {
+        margin-left: 1em;
+    }
+
+    .imagem__logo {
+        margin-right: 6em;
+        height: 80.31px;
+    }
+
+    /* Texto de boas Vindas */
+
+    .boas__vindas {
+        margin-left: 4em;
+    }
+    
+    .bv__texto {
+        margin-bottom: 0.4em;
+    }
+    
+    .bv__paragrafo {
+        width: 45%;
+    }
+
+    /* Inputs do usuario e botao */
+        
+    .container__formulario {
+        display: flex;
+        margin: 2em 4em;
+    }
+
+    .dados__participante {
+        width: auto;
+    }
+
+    .dados__saldo {
+        width: auto;
+    }
+
+    .campo__etiqueta {
+        width: 50%;
+    }
+
+    .campo__escrita {
+        padding: 1em;
+        width: 80%;
+    }
+
+    .formulario__botao {
+        padding: 0.2em 4em;
+        margin-left: 2em;
+        margin-top: 0.5em;
+    }
+
+    /* Nome do participante e texto */
+
+    .participante__apresentacao {
+        margin-top: 2em;
+    }
+    
+    .nome__participante {
+        margin-left: 2em;
+    }
+    
+    .texto__participante {
+        width: 70%;
+        margin-left: 3.6em;
+        margin-top: 1em;
+    }
+
+    /* Renda por percentual % Textos */
+
+    .plano__titulo {
+        margin-bottom: 0.5em;
+    }
+    
+    .plano__calculos {
+        margin-top: 3em;
+        margin-left: 4.5em;
+    }
+    
+    .fatores__calculo {
+        width: 50%;
+    }
+    
+    .fatores__saldo {
+        width: 50%;
+        margin-left: 22em;
+        margin-top: -3em;
+    }
+
+    /* Percentual renda Tabela */
+    
+    .container__percentual {
+        margin-top: 2em;
+        margin-left: 3em;
+        width: 90%;
+    }
+    
+    .percentual__titulo {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center; 
+    }
+    
+    .container__tabela {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Observacoes Importantes */
+    
+    .container__observacoes{
+        margin-top: 0em;
+        margin-left: 4.5em;
+    }
+
+    .observacoes__titulo{
+        margin-bottom: 1em;
+        margin-top: 2em;
+    }
+
+    .observacoes__texto{
+        width: 80%;
+    }
+
+    /* Rodape */
+
+    .rodape {
+        display: flex;
+        justify-content: center;
+        margin-top: 5em;
+    }
+    
+}
+
+
+/* Layout mobile */
+
+@media screen and (max-width: 768px) {
+
+    /* Cabecalho */
+    .cabecalho {
+        margin: 0.5em;
+    }
+    
+    .titulo__principal {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0em;
+        width: 50%;
+    }
+    
+    .imagem__logo {
+        height: 49.96px;
+        margin-right: 0em;
+        margin-top: 1em;
+    }
+
+
+    /* Texto de boas Vindas */
+
+    .boas__vindas {
+        margin-left: 0em;
+    }
+    
+    .bv__texto {
+        font-size: 24px;
+        margin-left: 1em;
+    }
+    
+    .bv__paragrafo {
+        font-size: 13px;
+        line-height: 15.85px;
+        margin-left: 2em;
+        width: 80%;
+    }
+
+    /* Inputs do usuario e botao */
+
+    .container__formulario {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1em 1.5em;
+    }
+    
+    .dados__participante {
+        width: auto;
+    }
+    
+    .dados__saldo {
+        width: auto;
+    }
+    
+    .campo__etiqueta {
+        width: 20%;
+        font-size: 20px;
+        margin-bottom: 1em;
+    }
+    
+    .campo__escrita {
+        padding: 0.5em;
+        width: 90%;
+        margin: 0.5em 0em;
+    }
+    
+    .formulario__botao {
+        font-weight: 700;
+        font-size: 20px;
+        padding: 0.5em 5em;
+        margin-left: 2em;
+        margin-top: -3em;
+    }
+
+
+    /* Nome do participante e texto */
+
+    .participante__apresentacao {
+        margin-top: 2em;
+    }
+    
+    .nome__participante {
+        font-size: 20px;
+        line-height: 24.38px;
+        margin-left: 1.5em;
+    }
+    
+    .texto__participante {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 15.85px;
+        margin-top: 1em;
+        margin-left: 2.5em;
+        width: 80%;
+    }
+
+
+    /* Renda por percentual % Textos */
+
+    .plano__titulo {
+        font-size: 20px;
+        line-height: 24.38px;
+        width: 70%;
+        margin-top: 1em;
+        margin-bottom: 0em;
+    }
+    
+    .plano__calculos {
+        margin-top: 0em;
+        margin-left: 2em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .calculo__texto {
+        line-height: 14.63px;
+    }
+    
+    .fatores__calculo {
+        width: 50%;
+        line-height: 14.63px;
+        font-size: 12px;
+        margin-top: 1em;
+    }
+    
+    .fatores__saldo {
+        margin-left: 0em;
+        margin-top: 0em;
+        line-height: 14.63px;
+        font-size: 12px;
+    }
+
+    /* Percentual renda Tabela */
+    
+    .container__percentual {
+        margin-top: 1em;
+        margin-left: 0em;
+    }
+    
+    .percentual__titulo {
+        font-size: 16px;
+    }
+    
+    .container__tabela {
+        display: flex;
+        justify-content: center;
+    }
+    
+    table, th, td {
+        width: 85%;
+        padding: 0.5em;
+        margin-top: 1em;
+        font-size: 13px;
+    }
+
+    /* Observacoes importantes */
+
+    .container__observacoes{
+        margin-top: 2em;
+        margin-left: 2em;
+    }
+    
+    .observacoes__titulo{
+        font-size: 16px;
+        margin-bottom: 2em;
+        margin-top: 0em;
+    }
+    
+    .observacoes__texto{
+        font-size: 12px;
+        line-height: 14.63px;
+        width: 85%;
+    }
+
+    /* Rodape */
+
+    .rodape {
+        margin-top: 5em;
+        height: 40px;
+    }
+
+}
