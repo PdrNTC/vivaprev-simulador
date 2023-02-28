@@ -209,6 +209,7 @@ th {
     display: flex;
     justify-content: center;
     margin-top: 10em;
+    margin-bottom: 3em;
 }
 
 
@@ -353,6 +354,7 @@ th {
         display: flex;
         justify-content: center;
         margin-top: 5em;
+        margin-bottom: 3em;
     }
     
 }
@@ -540,6 +542,7 @@ th {
     .rodape {
         margin-top: 5em;
         height: 40px;
+         margin-bottom: 2em;
     }
 
 }
