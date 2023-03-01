@@ -34,13 +34,32 @@
         </div>
         <div class="dados__saldo">
             <label class="campo__etiqueta" for="valor">Valor do aporte</label>
-            <input class="campo__escrita" id="valor" type="number" name="saldo" placeholder="inserir número inteiro sem ponto ou virgula: ex (500000)">
+            <input class="campo__escrita" id="valor" type="text" name="valor" placeholder="R$ 0,00">
         </div> 
         <br> <br> <!-- Quebra de linhas -->
         <br> <br> <!-- Quebra de linhas -->
     </div>
 
     <button class="formulario__botao" onclick="calcular()">Calcular</button>
+
+    <h2 class="titulo__rentabilidade">Rentabilidade Acumulada</h2>
+
+    <!-- Secao para Graficos em Barra -->
+
+    <div class="graphs">
+        <section class="bar-graph bar-graph-horizontal bar-graph-one">
+            <div class="bar-one">
+              <span class="year"><strong class="negrito">Viva Futuro</strong></span>
+              <div class="bar" data-percentage="12,17%"></div>
+            </div>
+            <div class="bar-two">
+              <span class="year"><strong class="negrito">Meta Referencial (INPC + 2,42% a.a.)</strong></span>
+              <div class="bar" data-percentage="8,49%"></div>
+            </div>
+          </section>
+    </div>
+
+    <!-- **************************************************** -->
    
 
     <!-- Secao sobre os calculos por porcentagem % -->
@@ -52,17 +71,22 @@
     <div class="plano__calculos">
         <h2 class="plano__titulo">Renda por percentual saldo de conta</h2>
         <div class="fatores__calculo">
-            <p class="calculo__texto"> <strong class="negrito">Fatores de cálculo <br></strong>
-                Taxa de juros anual real: <strong class="negrito">3.40%<br></strong>
-                Taxa de juros real mensal: <strong class="negrito">0.2790%</strong>
+            <p class="calculo__texto"> <strong class="negrito">Informações sobre o benefício:<br></strong>
+                    Saldo ao aderir: <strong class="negrito"> 
+                    <span class="saldo__aderir" id="saldo"><!--Colocar Saldo aqui--></span>
+                    <br> 
+                </strong>
+                Abono Anual: <strong class="negrito">NÃO</strong>
             </p>
         </div>
+        <!--
         <div class="fatores__saldo">
             <p class="calculo__texto">
                 Saldo ao aderir: <strong class="negrito">SALDO<br></strong>
                 Abono anual: <strong class="negrito">NÃO</strong>
             </p>
         </div>
+        -->
     </div>
 
     <div class="container__percentual" id="container__percentual">
@@ -84,18 +108,24 @@
     <div class="plano__calculos">
         <h2 class="plano__titulo">Renda por prazo determinado</h2>
         <div class="fatores__calculo">
-            <p class="calculo__texto"> <strong class="negrito">Fatores de cálculo <br></strong>
-                Taxa de juros anual real: <strong class="negrito">3.40%<br></strong>
-                Taxa de juros real mensal: <strong class="negrito">0.2790%</strong>
-            </p>
+            <p class="calculo__texto"> <strong class="negrito">Informações sobre o benefício:<br></strong>
+                Saldo ao aderir: <strong class="negrito"> 
+                <span class="saldo__aderir" id="saldoPrazo"><!--Colocar Saldo aqui--></span> 
+                <br>
+            </strong>
+            Abono Anual: <strong class="negrito">NÃO</strong>
+        </p>
         </div>
+        <!--
         <div class="fatores__saldo">
             <p class="calculo__texto">
                 Saldo ao aderir: <strong class="negrito">SALDO<br></strong>
                 Abono anual: <strong class="negrito">NÃO</strong>
             </p>
         </div>
+        -->
     </div>
+
 
     <div class="container__percentual" id="container__prazo">
         <h3 class="percentual__titulo">Valor bruto mensal inicial</h3>
@@ -125,6 +155,15 @@
         <img class="imagem__rodape" src="./imagens/viva_futuro_footer.png" alt="logotipo da vivaprevidencia">
     </footer>
 
+  
     <script src="main.js"></script>
+    <!--Script Jquery Mask -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script>
+        $('#valor').mask("#.##0", { reverse: true });
+    </script>
+
 </body>
 </html>

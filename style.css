@@ -105,6 +105,116 @@ body::-webkit-scrollbar-thumb{
     margin-top: 0.5em;
 }
 
+/* RENTABILIDADE */
+
+.titulo__rentabilidade {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43.88px;
+    margin-left: 2em;
+    margin-top: 1em;
+    margin-bottom: 0.5em; 
+}
+
+.graphs {
+    font-family: var(--fonte-principal);
+    padding: 20px;
+    margin-left: 3.5em;
+  }
+
+  .year {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Bar Graph Horizontal */
+.bar-graph .year {
+    -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+    -moz-animation: fade-in-text 2.2s 0.1s forwards;
+    animation: fade-in-text 2.2s 0.1s forwards;
+    opacity: 0;
+    font-size: 20px;
+}
+  
+.bar-graph-horizontal {
+    max-width: 380px;
+}
+  
+.bar-graph-horizontal > div {
+    margin-bottom: 8px;
+    width: 100%;
+}
+  
+.bar-graph-horizontal .year {
+    margin-top: 18px;
+    width: 50px;
+}
+  
+.bar-graph-horizontal .bar {
+    border-radius: 3px;
+    height: 55px;
+    overflow: hidden;
+    position: relative;
+    width: 0;
+}
+
+.bar-graph-one .bar::after {
+    -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+    -moz-animation: fade-in-text 2.2s 0.1s forwards;
+    animation: fade-in-text 2.2s 0.1s forwards;
+    color: #fff;
+    content: attr(data-percentage);
+    font-weight: 700;
+    font-size: 20pt;
+    position: absolute;
+    right: 16px;
+    top: 20%;
+}
+  
+.bar-graph-one .bar-one .bar {
+    background-color: #93DA2B;
+    -webkit-animation: show-bar-one 1.2s 0.1s forwards;
+    -moz-animation: show-bar-one 1.2s 0.1s forwards;
+    animation: show-bar-one 1.2s 0.1s forwards;
+}
+  
+.bar-graph-one .bar-two .bar {
+    background-color: #3a3a3a;
+    -webkit-animation: show-bar-two 1.2s 0.2s forwards;
+    -moz-animation: show-bar-two 1.2s 0.2s forwards;
+    animation: show-bar-two 1.2s 0.2s forwards;
+}
+  
+  /* Bar Graph Horizontal Animations */
+@keyframes show-bar-one {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+}
+  
+@keyframes show-bar-two {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 69.50%;
+    }
+}
+  
+  
+@keyframes fade-in-text {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 .formulario__botao:hover {
     background-color: var(--roxo);
 }
@@ -446,6 +556,22 @@ th {
         margin-top: -3em;
     }
 
+    /* RENTABILIDADE */
+
+    .titulo__rentabilidade {
+        font-size: 20px;
+        line-height: 24.38px;
+        margin-left: 1.5em;
+        margin-top: 2em;
+        margin-bottom: 0.5em; 
+    }
+
+    .graphs {
+        font-family: var(--fonte-principal);
+        padding: 20px;
+        margin-left: 1em;
+      }
+
 
     /* Nome do participante e texto */
 
@@ -491,7 +617,7 @@ th {
     }
     
     .fatores__calculo {
-        width: 50%;
+        width: 70%;
         line-height: 14.63px;
         font-size: 12px;
         margin-top: 1em;

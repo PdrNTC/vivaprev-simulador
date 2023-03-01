@@ -1,12 +1,17 @@
-const valor = document.querySelector('#valor');
+// variaveis dinamicamente armazenadas pelo DOM da aplicação 
+const valor = document.getElementById('valor');
 const nome = document.getElementById('nome');
 const insereNome = document.getElementById('nome__cliente');
+const insereSaldo = document.getElementById('saldo');
+const insereSaldoPrazo = document.getElementById('saldoPrazo');
 const resultado = document.getElementById('tabela');
 const resultadoAuxiliar = document.getElementById('tabela');
 const tituloPercentual = document.getElementById('container__percentual');
 const resultadoPorAno = document.getElementById('tabela_prazo');
 const resultadoPorAnoAuxiliar = document.getElementById('tabela_prazo');
 
+
+// Arrays utilizados 
 const valor_calulado = [];
 const rendaPorAno = [];
 const percentual = [0.0025, 0.0045, 0.0065, 0.0085, 0.0105, 0.0125, 0.0145, 0.0165, 0.0185, 0.02];
@@ -16,11 +21,17 @@ const indiceAuxiliar = [1, 5, 10, 15, 20, 25, 30, 35];
 
 
 function calcular () {
-    console.log(nome.value);
+    // Convertendo Valor da mascara para INT
+    const valorConvertido = valor.value.replace(/\D/g,'');
+    console.log(parseFloat(valorConvertido));
+   
+    
     // Limpando a tela quando chamar a função
     resultado.innerHTML = ``;
     resultadoPorAno.innerHTML = ``;
 
+
+    // Criando a const formatter para ser chamada com o metodo format para formatar em valor monetario
     const formatter = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL",
@@ -29,18 +40,29 @@ function calcular () {
 
     // Calculando a renda inicial estimada
     for(let i = 0; i < percentual.length; i = i + 1) {
-        valor_calulado[i] = (valor.value * percentual[i]);
+        valor_calulado[i] = valorConvertido * percentual[i];
     }
-    console.log(valor_calulado);
+    //console.log(valor_calulado);
 
     // Calculando a renda por ano
     for(let j = 0; j < 8; j = j + 1) {
-        rendaPorAno[j] = valor.value/(13*indiceAuxiliar[j]);
+        rendaPorAno[j] = valorConvertido/(13*indiceAuxiliar[j]);
     }
-    console.log(rendaPorAno);
+    //console.log(rendaPorAno);
 
+
+    // Inserindo o Nome do Participante dinamicamente na label
     insereNome.innerHTML = `
-        ${nome.value};
+        <strong class="negrito">${nome.value}</strong>  
+    `
+
+    // Inserindo o Valor do participante dinamicamente na label
+    insereSaldo.innerHTML = `
+        ${formatter.format(valorConvertido)}
+    `
+
+    insereSaldoPrazo.innerHTML = `
+        ${formatter.format(valorConvertido)}
     `
 
     resultadoAuxiliar.innerHTML = `
@@ -62,21 +84,31 @@ function calcular () {
         `   
     })
 
-    resultadoPorAnoAuxiliar.innerHTML = `
-        <tr>
-            <th>Percentual do saldo (a definir)</th>
-            <th>Renda inicial estimada</th>
-        </tr>
-    `
 
     // Exibindo na tela dinamicamente o resultado com a function forEach
     rendaPorAno.forEach(function(rendaPorAno, i) {
-        resultadoPorAno.innerHTML += `
-        <tr>
-            <td>${indiceAuxiliar[i]} anos</td>
-            <td>${formatter.format(rendaPorAno)}</td>
-        </tr>
-        `
+
+        if (indiceAuxiliar[i] === 1) {
+            resultadoPorAno.innerHTML = `
+                <tr>
+                    <th>Prazo (a definir)</th>
+                    <th>Renda inicial estimada</th>
+                </tr>
+                <tr>
+                    <td>${indiceAuxiliar[0]} ano</td>
+                    <td>${formatter.format(rendaPorAno)}</td>
+                </tr>
+            `
+            console.log(rendaPorAno)
+        } else {
+            resultadoPorAno.innerHTML += `
+            <tr>
+                <td>${indiceAuxiliar[i]} anos</td>
+                <td>${formatter.format(rendaPorAno)}</td>
+            </tr>
+            `
+        }
+      
     })
 
 }
