@@ -161,9 +161,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
+  
     <script>
-        $('#valor').mask("#.##0", { reverse: true });
+        jQuery(function() {
+            jQuery("#valor").maskMoney({
+                prefix:'R$ ', 
+                thousands:'.', 
+                decimal:','
+            })
+        });
     </script>
+    
 
 </body>
 </html>
+
+
+
+

@@ -22,7 +22,8 @@ const indiceAuxiliar = [1, 5, 10, 15, 20, 25, 30, 35];
 
 function calcular () {
     // Convertendo Valor da mascara para INT
-    const valorConvertido = valor.value.replace(/\D/g,'');
+    //const valorConvertido = valor.value.replace(/\D/g,'');
+    const valorConvertido = parseFloat(valor.value.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2);
     console.log(parseFloat(valorConvertido));
    
     
