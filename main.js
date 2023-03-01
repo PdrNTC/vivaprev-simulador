@@ -46,7 +46,7 @@ function calcular () {
 
     // Calculando a renda por ano
     for(let j = 0; j < 8; j = j + 1) {
-        rendaPorAno[j] = valorConvertido/(13*indiceAuxiliar[j]);
+        rendaPorAno[j] = valorConvertido/(12*indiceAuxiliar[j]);
     }
     //console.log(rendaPorAno);
 
