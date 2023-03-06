@@ -26,21 +26,26 @@
         <p class="bv__paragrafo">Seja bem vindo ao simulador de renda do plano Viva Futuro. Para simular a sua renda, basta inserir o seu nome e o valor do seu aporte inicial.</p>
     </div>
 
-    
-    <div class="container__formulario">
-        <div class="dados__participante">
-            <label class="campo__etiqueta" for="nome">Nome Completo</label>
-            <input name="nome" id="nome" class="campo__escrita" required placeholder="Digite seu nome completo" />
+    <form>
+        <div class="container__formulario">
+            <div class="dados__participante">
+                <label class="campo__etiqueta" for="nome">Nome Completo</label>
+                <input name="nome" id="nome" class="campo__escrita" required placeholder="Digite seu nome completo" />
+            </div>
+            <div class="dados__telefone">
+                <label class="campo__etiqueta" for="telefone">Telefone</label>
+                <input class="campo__escrita" id="telefone" required type="tel" placeholder="(xx) xxxxx-xxxx" maxlength="11">
+            </div> 
+            <div class="dados__saldo">
+                <label class="campo__etiqueta" for="valor">Valor do aporte</label>
+                <input class="campo__escrita" id="valor" required type="text" name="valor" placeholder="R$ 0,00">
+            </div> 
+            <br> <br> <!-- Quebra de linhas -->
+            <br> <br> <!-- Quebra de linhas -->
         </div>
-        <div class="dados__saldo">
-            <label class="campo__etiqueta" for="valor">Valor do aporte</label>
-            <input class="campo__escrita" id="valor" type="text" name="valor" placeholder="R$ 0,00">
-        </div> 
-        <br> <br> <!-- Quebra de linhas -->
-        <br> <br> <!-- Quebra de linhas -->
-    </div>
 
-    <button class="formulario__botao" onclick="calcular()">Calcular</button>
+        <button type="submit" class="formulario__botao" onclick="calcular()">Calcular</button>
+    </form>
 
     <h2 class="titulo__rentabilidade">Rentabilidade Acumulada</h2>
 
@@ -139,7 +144,9 @@
     </div>
 
     <!--   ************************************************************  -->
-
+    <div class="container__adesao">
+        <a class="botao__adesao" href="https://wa.me/5561994162880?text=Ol%C3%A1%2C+Philipi.+Gostaria+de+realizar+a+minha+ades%C3%A3o+ao+plano+Viva+Futuro%21">Faça sua adesão</a>
+    </div>
 
     <div class="container__observacoes">
         <p class="observacoes__titulo">Observações importantes</p>
@@ -171,6 +178,7 @@
                 decimal:','
             })
         });
+        $('#telefone').mask('(00) 00000-0000');
     </script>
     
 

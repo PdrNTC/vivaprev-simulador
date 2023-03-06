@@ -1,6 +1,7 @@
 // variaveis dinamicamente armazenadas pelo DOM da aplicação 
 const valor = document.getElementById('valor');
 const nome = document.getElementById('nome');
+const telefone = document.getElementById('telefone');
 const insereNome = document.getElementById('nome__cliente');
 const insereSaldo = document.getElementById('saldo');
 const insereSaldoPrazo = document.getElementById('saldoPrazo');
@@ -19,6 +20,29 @@ const percentualAuxiliar = [0.25, 0.45, 0.65, 0.85, 1.05, 1.25, 1.45, 1.65, 1.85
 const indiceAuxiliar = [1, 5, 10, 15, 20, 25, 30, 35];
 
 
+// Conectando com API Sheet monkey e salvando dados do form
+
+const handleSubmit = (evento) => {
+    evento.preventDefault();
+
+    const name_sheet = document.getElementById('nome').value;
+    const telefone_sheet = document.getElementById('telefone').value;
+    const valor_sheet = document.getElementById('valor').value;
+
+    fetch('https://api.sheetmonkey.io/form/xxxJYKUXuKzmKznkH6jfoo', {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nome: name_sheet, telefone: telefone_sheet, valor_aporte: valor_sheet })
+    });
+}
+
+document.querySelector('form').addEventListener('submit', handleSubmit);
+
+
+// Function Calcular chamada atraves do botao calcular
 
 function calcular () {
     // Convertendo Valor da mascara para INT
@@ -111,5 +135,4 @@ function calcular () {
         }
       
     })
-
 }
