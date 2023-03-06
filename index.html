@@ -171,6 +171,7 @@
     <script src="https://plentz.github.io/jquery-maskmoney/javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
   
     <script>
+         /*
         jQuery(function() {
             jQuery("#valor").maskMoney({
                 prefix:'R$ ', 
@@ -178,6 +179,8 @@
                 decimal:','
             })
         });
+        */
+        $('#valor').mask("#.##0,00", { reverse: true });
         $('#telefone').mask('(00) 00000-0000');
     </script>
     
