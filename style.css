@@ -714,10 +714,109 @@ th {
 /* Layout para impressão */
 
 @media print {
+
+    
     .titulo__principal {
         font-size: 34px;
         font-weight: 700;
         color: var(--cinza);
-        margin-left: 6em;
+        margin-left: 0.5em;
+    }
+
+    .cabecalho {
+        display: flex;
+        justify-content: space-between;
+        margin: 1em;
+    }
+    
+    .imagem__logo {
+        margin-right: 2em;
+    }
+    
+    .boas__vindas {
+        color: var(--cinza);
+        margin-left: 2em;
+    }
+    
+    .bv__texto {
+        font-size: 40px;
+        margin-bottom: 0.4em;
+    }
+    
+    .bv__paragrafo {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        width: 60%;
+    }
+
+    /* Inputs e labels */
+
+    .container__formulario {
+        display: flex;
+        margin: 2em 2em;
+    }
+
+    .formulario__botao {
+        margin-left: 3em;
+        margin-top: 0.5em;
+    }
+
+    /* Rentabilidade Grafico */
+
+    .titulo__rentabilidade {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 43.88px;
+        margin-left: 1em;
+        margin-top: 1em;
+        margin-bottom: 0.5em; 
+    }
+    
+    .graphs {
+        font-family: var(--fonte-principal);
+        padding: 20px;
+        margin-left: 2em;
+    }
+
+    /* Nome Participante e textos */
+
+    .participante__apresentacao {
+        margin-top: 2em;
+    }
+    
+    .nome__participante {
+        margin-left: 1em;
+    }
+    
+    .texto__participante {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--cinza);
+        line-height: 24.38px;
+        width: 90%;
+        margin-left: 2em;
+        margin-top: 1em;
+    }
+
+    /* Container calculos tabela */
+
+    .plano__calculos {
+        margin-top: 3em;
+        margin-left: 2em;
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    /* Container Observacoes Importantes */
+
+    .container__observacoes{
+        margin-top: 2em;
+        margin-left: 2em;
+    }
+
+    .observacoes__texto{
+        width: 100%;
     }
 }
